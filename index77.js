@@ -48,17 +48,19 @@ client.on('messageCreate', async message => {
         message.channel.send({ embeds: [embed], components: [row] });
     }
 
-    if (message.content === '!اسرع') {
-        const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
-        activeGame = { word: randomWord, startTime: Date.now(), channelId: message.channel.id };
+    // داخل أمر !اسرع
+if (message.content === '!اسرع') {
+    const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+    activeGame = { word: randomWord, startTime: Date.now(), channelId: message.channel.id };
 
-        // إرسال الصورة كخلفية فقط
-        const attachment = new AttachmentBuilder('./edited-image.png', { name: 'game.png' });
-        
-        // إرسال الكلمة كنص واضح فوق الصورة
-        message.channel.send({ 
-            content: `**أسرع من يكتب الكلمة التالية:** ||${randomWord}||`, 
-            files: [attachment] 
+    const embed = new EmbedBuilder()
+        .setTitle('أسرع من يكتب الكلمة!')
+        .setDescription(`اكتب الكلمة التالية بسرعة: **${randomWord}**`)
+        .setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524396477940764762/IMG_8626.png?ex=6a4f985a&is=6a4e46da&hm=60da20c229ef96b6f3a1fc38d911a81125eb0ab3e1386fe35d7ab2b2f293dbc6&')
+        .setColor(0x0099FF);
+
+    message.channel.send({ embeds: [embed] });
+}
         });
     }
 
