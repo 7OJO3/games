@@ -1,9 +1,9 @@
 {
   "name": "my-bot",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index77.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index77.js"
   },
   "dependencies": {
     "discord.js": "^14.15.3",
