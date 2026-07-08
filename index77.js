@@ -64,7 +64,7 @@ if (message.content === '!اسرع') {
     const embed = new EmbedBuilder()
         .setTitle('أسرع من يكتب الكلمة!')
         .setDescription(`اكتب الكلمة التالية بسرعة: **${randomWord}**`)
-        .setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524396477940764762/IMG_8626.png?ex=6a4f985a&is=6a4e46da&hm=60da20c229ef96b6f3a1fc38d911a81125eb0ab3e1386fe35d7ab2b2f293dbc6&')
+        .setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524400557224099840/image0.jpg?ex=6a4f9c26&is=6a4e4aa6&hm=f0fab293fc603a355c059aeb3d438e32a5b62a9f2a9fc7fb679a66fb9b47c207')
         .setColor(0x0099FF);
 
     message.channel.send({ embeds: [embed] });
