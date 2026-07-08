@@ -51,12 +51,15 @@ client.on('messageCreate', async message => {
     if (message.content === '!اسرع') {
         const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
         activeGame = { word: randomWord, startTime: Date.now(), channelId: message.channel.id };
-        const image = await Jimp.read('./edited-image.png');
-        const font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
-        image.print(font, 0, 150, { text: randomWord, alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER, alignmentY: Jimp.VERTICAL_ALIGN_MIDDLE }, 800, 300);
-        const buffer = await image.getBufferAsync(Jimp.MIME_PNG);
-        const attachment = new AttachmentBuilder(buffer, { name: 'game.png' });
-        message.channel.send({ files: [attachment] });
+
+        // إرسال الصورة كخلفية فقط
+        const attachment = new AttachmentBuilder('./edited-image.png', { name: 'game.png' });
+        
+        // إرسال الكلمة كنص واضح فوق الصورة
+        message.channel.send({ 
+            content: `**أسرع من يكتب الكلمة التالية:** ||${randomWord}||`, 
+            files: [attachment] 
+        });
     }
 
     if (activeGame.channelId === message.channel.id && message.content === activeGame.word) {
