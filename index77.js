@@ -134,19 +134,14 @@ client.on('messageCreate', async message => {
         const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
         activeGame = { word: randomWord, startTime: Date.now(), channelId: message.channel.id };
 
-        // رسم الكلمة على الصورة
-        const canvas = createCanvas(800, 300); // أبعاد صورتك
-        const ctx = canvas.getContext('2d');
-        const background = await loadImage('./edited-image.png').catch(() => null); 
-        if (background) ctx.drawImage(background, 0, 0);
+        // استخدام Embed بدلاً من Canvas (بدون مكتبة canvas)
+        const embed = new EmbedBuilder()
+            .setTitle('أسرع واكتب الكلمة!')
+            .setDescription(`الكلمة هي: **${randomWord}**`)
+            .setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524351573088665660/IMG_8672.jpg?ex=6a4f6e88&is=6a4e1d08&hm=5b9c9cf90b182a9bdcebf3a824691bee96362a510cbca4c17da599e6b7b460d9&')
+            .setColor(0x00FF00);
 
-        ctx.font = 'bold 40px Arial';
-        ctx.fillStyle = '#ffffff';
-        ctx.textAlign = 'center';
-        ctx.fillText(randomWord, 400, 150); // الإحداثيات (x=400, y=150) داخل الدائرة
-
-        const attachment = new AttachmentBuilder(canvas.toBuffer(), { name: 'game.png' });
-        message.channel.send({ files: [attachment] });
+        message.channel.send({ embeds: [embed] });
     }
 
     if (activeGame.channelId === message.channel.id && message.content === activeGame.word) {
