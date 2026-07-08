@@ -70,7 +70,7 @@ if (message.content === '!اسرع') {
     message.channel.send({ embeds: [embed] });
 }
         });
-    }
+    
 
     if (activeGame.channelId === message.channel.id && message.content === activeGame.word) {
         const timeTaken = ((Date.now() - activeGame.startTime) / 1000).toFixed(2);
