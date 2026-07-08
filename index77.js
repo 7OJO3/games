@@ -69,7 +69,7 @@ if (message.content === '!اسرع') {
 
     message.channel.send({ embeds: [embed] });
 }
-        });
+
     
 
     if (activeGame.channelId === message.channel.id && message.content === activeGame.word) {
