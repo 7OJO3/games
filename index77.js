@@ -86,8 +86,8 @@ client.on('messageCreate', async message => {
         activeGame = { word: '', startTime: 0, channelId: '' };
 
         message.channel.send('تم إيقاف جميع الألعاب بنجاح!');
-            }
-            });
+    }
+});
 
 client.on('interactionCreate', async interaction => {
     if (!interaction.isButton()) return;
