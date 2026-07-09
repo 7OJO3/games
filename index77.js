@@ -92,7 +92,7 @@ client.on('interactionCreate', async interaction => {
 
     if (interaction.customId === 'shop') {
         if (!isShopOpen) return interaction.reply({ content: 'المتجر مغلق!', ephemeral: true });
-        const shopEmbed = new EmbedBuilder().setTitle('متجر الأغراض').setDescription('مرحباً بك في المتجر، اختر غرضاً (التكلفة 3 نقاط):').setImage('https://discord.com/channels/1009291746410254337/1501300022808023351/1524396222184423474');
+        const shopEmbed = new EmbedBuilder().setTitle('متجر الأغراض').setDescription('مرحباً بك في المتجر، اختر غرضاً (التكلفة 3 نقاط):').setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524396221777842306/IMG_8671.jpg?ex=6a50e99d&is=6a4f981d&hm=05bc4ea267e19fce3f8b3a01ef4fb4bb3ddbe530dba0f552b5bc2466ff8b401d');
         const row = new ActionRowBuilder().addComponents(
             new ButtonBuilder().setCustomId('buy_revive').setLabel('انعاش').setStyle(ButtonStyle.Primary).setEmoji('1524283733346095175'),
             new ButtonBuilder().setCustomId('buy_shield').setLabel('حماية').setStyle(ButtonStyle.Primary).setEmoji('1524283704632148068'),
