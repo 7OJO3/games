@@ -57,7 +57,7 @@ client.on('messageCreate', async message => {
     if (message.content === '!اسرع') {
         const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
         activeGame = { word: randomWord, startTime: Date.now(), channelId: message.channel.id };
-        const embed = new EmbedBuilder().setTitle('أسرع من يكتب الكلمة!').setDescription(`اكتب الكلمة التالية بسرعة: **${randomWord}**`).setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524422302006116474/IMG_8696.png?ex=6a4fb067&is=6a4e5ee7&hm=a8b08ee8d9d3e5d677c7f4da92b4e3b36b8e3c4b80c2ec32423d602a8b829c1f').setColor(0x0099FF);
+        const embed = new EmbedBuilder().setTitle('أسرع من يكتب الكلمة!').setDescription(`اكتب الكلمة التالية بسرعة: **${randomWord}**`).setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524422302006116474/IMG_8696.png?ex=6a4fb067&is=6a4e5ee7&hm=a8b08ee8d9d3e5d677c7f4da92b4e3b36b8e3c4b80c2ec32423d602a8b829c1f').setColor(0xFFFDD0);
         message.channel.send({ embeds: [embed] });
     }
 
