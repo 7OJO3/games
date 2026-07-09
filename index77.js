@@ -23,7 +23,7 @@ async function startMafiaGame(channel) {
     game.started = true;
     const roles = ['Mafia', 'Police', 'Doctor', 'Boom', 'Citizen'];
     game.players.forEach((p, i) => {
-        p.role = roles[i % roles.length];
+        p.role = roles[i];
         client.users.send(p.id, { content: `دورك: ${p.role}`, files: [IMAGES[p.role.toUpperCase()]] }).catch(() => {});
     });
     channel.send('تم توزيع الأدوار الان دور المافيا يختار شخص لاغتياله');
