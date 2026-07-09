@@ -87,7 +87,6 @@ client.on('messageCreate', async message => {
 
         message.channel.send('تم إيقاف جميع الألعاب بنجاح!');
     }
-});
 
 client.on('interactionCreate', async interaction => {
     if (!interaction.isButton()) return;
