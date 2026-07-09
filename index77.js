@@ -135,5 +135,19 @@ client.on('interactionCreate', async interaction => {
         if (game.players.length >= 5) startMafiaGame(interaction.channel);
     }
 });
+// أمر إيقاف الألعاب
+    if (message.content === '!ايقاف') {
+        // إيقاف لعبة الروليت
+        gameParticipants = [];
+        isShopOpen = false;
+
+        // إيقاف لعبة المافيا
+        game = { players: [], phase: 'waiting', started: false };
+
+        // إيقاف لعبة أسرع
+        activeGame = { word: '', startTime: 0, channelId: '' };
+
+        message.channel.send('تم إيقاف جميع الألعاب بنجاح!');
+    }
 
 client.login(process.env.TOKEN);
