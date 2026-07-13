@@ -37,7 +37,7 @@ client.on('messageCreate', async message => {
     if (message.content === '!روليت') {
         gameParticipants = [];
         isShopOpen = true;
-        const embed = new EmbedBuilder().setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1524396477940764762/IMG_8626.png?ex=6a4f985a&is=6a4e46da&hm=60da20c229ef96b6f3a1fc38d911a81125eb0ab3e1386fe35d7ab2b2f293dbc6&').setDescription(`عدد المشاركين: 0`);
+        const embed = new EmbedBuilder().setImage('https://cdn.discordapp.com/attachments/1501300022808023351/1526265045481164850/IMG_9217.png?ex=6a566497&is=6a551317&hm=55830eb570b26ff470b708ba6145526eaf1e2d9dab23d82190bed4461379f1bf&').setDescription(`عدد المشاركين: 0`);
         const row = new ActionRowBuilder().addComponents(
             new ButtonBuilder().setCustomId('join').setLabel('انضمام').setStyle(ButtonStyle.Secondary).setEmoji('1524283748860952676'),
             new ButtonBuilder().setCustomId('shop').setLabel('متجر').setStyle(ButtonStyle.Secondary).setEmoji('1524283688228229180'),
